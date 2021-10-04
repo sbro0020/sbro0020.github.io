@@ -1,0 +1,197 @@
+{
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "An example of treemap layout for hierarchical data.",
+  "width": 1440,
+  "height": 810,
+  "padding": 2.5,
+  "autosize": "none",
+
+  "signals": [
+    {
+      "name": "Show_Science",
+      "description": "Group filter",
+      "value": true,
+      "bind": { "input": "checkbox" }
+    },{
+      "name": "Show_Social_Science",
+      "description": "Group filter",
+      "value": true,
+      "bind": { "input": "checkbox" }
+    },{
+      "name": "Show_Politics",
+      "description": "Group filter",
+      "value": true,
+      "bind": { "input": "checkbox" }
+    },{
+      "name": "Show_Arts",
+      "description": "Group filter",
+      "value": true,
+      "bind": { "input": "checkbox" }
+    },{
+      "name": "Show_Religion",
+      "description": "Group filter",
+      "value": true,
+      "bind": { "input": "checkbox" }
+    },{
+      "name": "Show_Education",
+      "description": "Group filter",
+      "value": true,
+      "bind": { "input": "checkbox" }
+    },{
+      "name": "Show_Law",
+      "description": "Group filter",
+      "value": true,
+      "bind": { "input": "checkbox" }
+    },{
+      "name": "Show_Business",
+      "description": "Group filter",
+      "value": true,
+      "bind": { "input": "checkbox" }
+    },{
+      "name": "Show_Finance",
+      "description": "Group filter",
+      "value": true,
+      "bind": { "input": "checkbox" }
+    }
+  ],
+  "data": [
+    {
+      "name": "tree",
+      "url": "data.json",
+      "transform": [
+        {
+          "type": "filter",
+          "expr": "!Show_Science ? datum.id<1000||datum.id>=2000 : datum.id!=6"
+        },{
+          "type": "filter",
+          "expr": "!Show_Social_Science ? datum.id<2000||datum.id>=3000 : datum.id!=6"
+        },{
+          "type": "filter",
+          "expr": "!Show_Politics ? datum.id<3000||datum.id>=4000 : datum.id!=6"
+        },{
+          "type": "filter",
+          "expr": "!Show_Arts ? datum.id<4000||datum.id>=5000 : datum.id!=6"
+        },{
+          "type": "filter",
+          "expr": "!Show_Religion ? datum.id<5000||datum.id>=6000 : datum.id!=6"
+        },{
+          "type": "filter",
+          "expr": "!Show_Education ? datum.id<6000||datum.id>=7000 : datum.id!=6"
+        },{
+          "type": "filter",
+          "expr": "!Show_Law ? datum.id<7000||datum.id>=8000 : datum.id!=6"
+        },{
+          "type": "filter",
+          "expr": "!Show_Business ? datum.id<8000||datum.id>=9000 : datum.id!=6"
+        },{
+          "type": "filter",
+          "expr": "!Show_Finance ? datum.id>9000||datum.id>=10000 : datum.id!=6"
+        },{
+          "type": "stratify",
+          "key": "id",
+          "parentKey": "parent"
+        },{
+          "type": "treemap",
+          "field": "size",
+          "sort": { "field": "value" },
+          "round": true,
+          "method": "binary",
+          "size": [{ "signal": "width" }, { "signal": "height"}]
+        }
+      ]
+    },{
+      "name": "nodes",
+      "source": "tree",
+      "transform": [{ "type": "filter", "expr": "datum.children" }]
+    },{
+      "name": "leaves",
+      "source": "tree",
+      "transform": [{ "type": "filter", "expr": "!datum.children" }]
+    }
+  ],
+  "scales": [
+    {
+      "name": "colour",
+      "type": "ordinal",
+      "domain": { "data": "nodes", "field": "name" },
+      "range": [
+        "#9edae5", "#1f77b4", "#17becf", "#aec7e8", "#dbdb8d",
+        "#ff7f0e", "#bcbd22", "#ffbb78", "#c7c7c7", "#2ca02c",
+        "#7f7f7f", "#98df8a", "#f7b6d2", "#d62728", "#e377c2",
+        "#ff9896", "#c49c94", "#9467bd", "#8c564b", "#c5b0d5"
+      ]
+    },{
+      "name": "size",
+      "type": "ordinal",
+      "domain": [0,1,2,3],
+      "range": [256, 28, 20, 14]
+    },{
+      "name": "opacity",
+      "type": "ordinal",
+      "domain": [0, 1, 2, 3],
+      "range": [0.15, 0.5, 0.8, 1.0]
+    }
+  ],
+  "params": [
+    {
+      "name": "highlight",
+      "select": { "type": "point", "on": "mouseover" }
+    },
+    { "name": "select", "select": "point" }
+  ],
+  "marks": [
+    {
+      "type": "rect",
+      "from": { "data": "nodes" },
+      "interactive": false,
+      "stroke": "black",
+      "encode": {
+        "enter": { "fill": { "scale": "colour", "field": "name" }},
+        "update": {
+          "x": { "field": "x0" },
+          "y": { "field": "y0" },
+          "x2": { "field": "x1" },
+          "y2": { "field": "y1" }
+        }
+      }
+    },{
+      "type": "rect",
+      "from": { "data": "leaves" },
+      "encode": {
+        "enter": { 
+          "stroke": { "value": "#fff" },
+          "tooltip": [{ "signal": "{'Occupation': datum.name, 'Size': datum.size}"}]
+        },
+        "update": {
+          "x": { "field": "x0" },
+          "y": { "field": "y0" },
+          "x2": { "field": "x1" },
+          "y2": { "field": "y1" },
+          "fill": { "value": "transparent" },
+          "stroke": { "value": "#fff" }
+        },
+        "hover": { "fill": { "value": "#b3b3b3" }}
+      }
+    },{
+      "type": "text",
+      "from": {"data": "nodes"},
+      "interactive": false,
+      "encode": {
+        "enter": {
+          "font": { "value": "Roboto, Arial" },
+          "align": { "value": "center" },
+          "baseline": { "value": "middle" },
+          "fill": { "value": "#000" },
+          "text": { "field": "name" },
+          "fontWeight": { "value": "bold" },
+          "lineBreak": { "value": " " },
+          "fontSize": { "value": 14 }
+        },
+        "update": {
+          "x": {"signal": "0.5 * (datum.x0 + datum.x1)"},
+          "y": {"signal": "0.5 * (datum.y0 + datum.y1)"}
+        }
+      }
+    }
+  ]
+}
