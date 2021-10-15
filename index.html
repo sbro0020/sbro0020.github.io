@@ -1,6 +1,17 @@
 <html>
     <head>
         <title>Sean Brooker FIT3179 Stuff</title>
+        <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+        <style>
+            #map {
+                top: 100px;
+                bottom: 100px;
+                left: 100px;
+                right: 100px;
+            }
+        </style>
     </head>
     <body>
         <h1>Sean Brooker FIT3179 Stuff</h1>
@@ -8,5 +19,12 @@
             <li><a href="week9.html">Week 9 Homework</a></li>
             <li><a href="week10.html">Week 10 Homework</a></li>
         </ul>
+        <div id="map"></div>
+        <script type="text/javascript">
+            var map = "density.vg.json";
+            vegaEmbed("#map", map).then(result => {
+                // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+            }).catch(console.error);
+        </script>
     </body>
 </html>

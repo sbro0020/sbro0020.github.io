@@ -1,0 +1,106 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Density Plot of Age",
+    "width": 800,
+    "height": 400,
+    "data": { "url": "densitydata.json" },
+    "transform": [
+        { "density": "age", "bandwidth": 1 }
+    ],
+    
+    "layer": [
+        {
+            "params": [{
+                "name": "index",
+                "value": [{"x": 60}],
+                "select": {
+                    "type": "point",
+                    "encodings": ["x"],
+                    "on": "mouseover",
+                    "nearest": true
+                }
+            }],
+            "mark": "point",
+            "encoding": {
+                "x": {"field": "date", "type": "temporal", "axis": null},
+                "opacity": {"value": 0}
+            }
+        },{
+            "mark": "area",
+            "encoding": {
+                "x": {
+                    "field": "value",
+                    "title": "Age",
+                    "type": "quantitative",
+                    "scale": { "domain": [0, 120] }
+                },
+                "y": {
+                    "field": "density",
+                    "type": "quantitative",
+                    "scale": {"domain": [0,0.06]}
+                },
+                "color": { "value": "#377eb8" },
+                "tooltip": [
+                    { "field": "age", "type": "quantitative", "title": "Age" },
+                    { "field": "value", "type": "quantitative", "title": "Density" }
+                ]
+            }
+        },{
+            "mark": "rule",
+            "encoding": {
+                "x": {
+                    "aggregate": "mean",
+                    "field": "value",
+                    "type": "quantitative"
+                },
+                "color": { "value": "#e41a1c" },
+                "size": { "value": 3 },
+                "text": { "value": "Average Life Span" },
+                "tooltip": [
+                    { "aggregate": "mean", "field": "value", "type": "quantitative", "title": "Average Life Span" }
+                ]
+            }
+        },{
+            "mark": {
+                "type": "text",
+                "align": "left",
+                "dx": 5,
+                "dy": -190,
+                "fontSize": 12,
+                "fontWeight": 300
+            },
+            "encoding": { 
+                "x": { 
+                    "aggregate": "mean",
+                    "field": "value",
+                    "type": "quantitative"
+                },
+                "text": { "value": "Average" },
+                "tooltip": [
+                    { "aggregate": "mean", "field": "value", "type": "quantitative", "title": "Average Life Span" }
+                ]
+            }
+        },{
+            "transform": [{ "filter": { "param": "index" }}],
+            "encoding": {
+                "x": { "field": "age", "type": "quantitative" },
+                "color": { "value": "#4daf4a" }
+            },
+            "layer": [
+                { "mark": { "type": "rule", "strokeWidth": 0.5 }},
+                { 
+                    "mark": {
+                        "type": "text",
+                        "align": "center",
+                        "fontWeight": 100
+                    },
+                    "encoding": {
+                        "text": { "field": "age" },
+                        "y": { "value": 130 }
+                    }
+                }
+            ]
+        }
+    ]
+  }
+    
