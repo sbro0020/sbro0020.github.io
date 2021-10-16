@@ -27,7 +27,7 @@
                     "field": "density",
                     "title": "Density of Mathematicians",
                     "type": "quantitative",
-                    "scale": { "domain": [0,0.06] },
+                    "scale": { "domain": [0,0.035] },
                     "axis": {
                         "titleFont": "Lucida Sans Unicode",
                         "titleFontWeight": 600,
