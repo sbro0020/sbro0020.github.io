@@ -36,7 +36,7 @@ for (let sectionIndex=1; sectionIndex<sections.length; sectionIndex++) {
     var graph = section.getElementsByClassName('graph')[0];
     var info = section.getElementsByClassName('info')[0];
     var styles = window.getComputedStyle(graph);
-    var graphAct = graph.getElementsByClassName('canvas');
+    var graphAct = graph.getElementsByClassName('canvas')[0];
     
     let newHeight = parseFloat(styles.width)/2;
     section.style.marginTop = height+5;
