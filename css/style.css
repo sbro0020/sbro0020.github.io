@@ -39,6 +39,9 @@ body {
     text-align: center;
     margin: 5% 2% auto 2%;
 }
+.info ul {
+    padding-top: 20%;
+}
 
 #map-info {
     margin-left: 72%;
