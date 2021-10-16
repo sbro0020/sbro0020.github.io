@@ -4,8 +4,8 @@ var containerHeight = parseFloat(styles.height);
 
 const treeData = {
     "$schema": "https://vega.github.io/schema/vega/v5.20.2.json",
-    "width": (containerWidth-9)*568/636,
-    "height": containerHeight*288283/298000,
+    "width": containerWidth,
+    "height": containerHeight,
     "autosize": "none",
     "data": [
       {
