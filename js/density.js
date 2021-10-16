@@ -23,8 +23,10 @@ const densityData = {
                     "axis": {
                         "titleFont": "Lucida Sans Unicode",
                         "titleFontWeight": 600,
+                        "titleFontSize": fontsizeInformation,
                         "labelFont": "Lucida Sans Unicode",
-                        "labelFontWeight": 200
+                        "labelFontWeight": 200,
+                        "labelFontSize": fontsizeInformation,
                     }
                 },
                 "y": {
@@ -35,8 +37,10 @@ const densityData = {
                     "axis": {
                         "titleFont": "Lucida Sans Unicode",
                         "titleFontWeight": 600,
+                        "titleFontSize": fontsizeInformation,
                         "labelFont": "Lucida Sans Unicode",
-                        "labelFontWeight": 200
+                        "labelFontWeight": 200,
+                        "labelFontSize": fontsizeInformation,
                     }
                 },
                 "color": { "value": "#377eb8" },

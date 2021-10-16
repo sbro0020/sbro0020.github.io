@@ -15,13 +15,26 @@ const brushData = {
             "field": "year",
             "type": "quantitative",
             "scale": {"domain": {"param": "brush"}},
-            "axis": {"title": "", "tickCount": 8 }
+            "axis": {
+              "title": "", 
+              "tickCount": 8,
+              "labelFontSize": fontsizeInformation,
+              "labelFont": "Lucida Sans Unicode"
+            }
           },
           "y": {
             "field": "num",
             "title": "Number of Living Mathematicians",
             "type": "quantitative",
-            "scale": {"domain": [0, 3000] }
+            "scale": {"domain": [0, 3000] },
+            "axis": {
+              "titleFont": "Lucida Sans Unicode",
+              "titleFontWeight": 600,
+              "titleFontSize": fontsizeInformation,
+              "labelFont": "Lucida Sans Unicode",
+              "labelFontWeight": 200,
+              "labelFontSize": fontsizeInformation
+            }
           },
           "color": {"value": "#377eb8"}
         }
@@ -41,8 +54,10 @@ const brushData = {
             "axis": {
               "titleFont": "Lucida Sans Unicode",
               "titleFontWeight": 600,
+              "titleFontSize": fontsizeInformation,
               "labelFont": "Lucida Sans Unicode",
-              "labelFontWeight": 200
+              "labelFontWeight": 200,
+              "labelFontSize": fontsizeInformation
             }
           },
           "color": {"value": "#377eb8"},
@@ -53,8 +68,10 @@ const brushData = {
             "axis": {
               "titleFont": "Lucida Sans Unicode",
               "titleFontWeight": 600,
+              "titleFontSize": fontsizeInformation,
               "labelFont": "Lucida Sans Unicode",
-              "labelFontWeight": 200
+              "labelFontWeight": 200,
+              "labelFontSize": fontsizeInformation
             },
             "scale": {"domain": [0, 3000]}
           }
