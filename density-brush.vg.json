@@ -1,5 +1,5 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.1.0.json",
     "data": { "url": "data/density-brush.csv" },
     "vconcat": [{
         "width": "container",

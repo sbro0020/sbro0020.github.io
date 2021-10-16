@@ -1,5 +1,5 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.1.0.json",
     "title": {
         "text": "Density Plot of the Life Span of Famous Mathematicians",
         "font": "Lucida Sans Unicode"
