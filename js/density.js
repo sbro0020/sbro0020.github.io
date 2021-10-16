@@ -5,8 +5,8 @@ var containerHeight = parseFloat(styles.height);
 const densityData = {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.1.0.json",
     "title": "",
-    "width": containerWidth*0.85,
-    "height": containerHeight*0.85,
+    "width": containerWidth,
+    "height": containerHeight,
     "data": { "url": "data/density.json" },
     "transform": [
         { "density": "age", "bandwidth": 1 }
@@ -65,7 +65,7 @@ const densityData = {
                 "type": "text",
                 "align": "left",
                 "dx": 5,
-                "dy": -190,
+                "dy": containerWidth/2,
                 "fontSize": 12,
                 "fontWeight": 300
             },
