@@ -25,6 +25,9 @@ body {
     position: absolute;
     display: table-cell;
 }
+.graph div {
+    padding-left: 50%;
+}
 .info {
     position: absolute;
     display: table-cell;
