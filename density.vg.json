@@ -4,8 +4,8 @@
         "text": "Density Plot of the Life Span of Famous Mathematicians",
         "font": "Lucida Sans Unicode"
     },
-    "width": 800,
-    "height": 400,
+    "width": "container",
+    "height": "container",
     "data": { "url": "data/density.json" },
     "transform": [
         { "density": "age", "bandwidth": 1 }
