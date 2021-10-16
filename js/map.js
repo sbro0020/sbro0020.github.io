@@ -1,5 +1,5 @@
-var containerWidth = document.getElementById("map").clientWidth;
-var containerHeight = document.getElementById("map").clientHeight;
+var containerWidth = document.getElementById("map").style.width;
+var containerHeight = document.getElementById("map").style.height;
 
 const vgData = {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.1.0.json",
