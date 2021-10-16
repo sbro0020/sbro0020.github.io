@@ -2,6 +2,9 @@ var styles = window.getComputedStyle(document.getElementById('map'))
 var containerWidth = parseFloat(styles.width);
 var containerHeight = parseFloat(styles.height);
 
+console.log(containerHeight);
+console.log(containerWidth);
+
 const mapData = {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.1.0.json",
     "width": containerWidth*0.85,
