@@ -36,9 +36,7 @@ for (let sectionIndex=1; sectionIndex<sections.length; sectionIndex++) {
     var graph = section.getElementsByClassName('graph')[0];
     var info = section.getElementsByClassName('info')[0];
     var styles = window.getComputedStyle(graph);
-    console.log(graph);
-    console.log(graph.children[0]);
-    var graphAct = graph.getElementsByClassName('div')[0].getElementsByClassName('canvas')[0];
+    var graphAct = graph.getElementsByTagName('div')[0].getElementsByTagName('canvas')[0];
     console.log(1);
     
     let newHeight = parseFloat(styles.width)/2;
