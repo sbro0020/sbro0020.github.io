@@ -51,7 +51,7 @@ const vgData = {
         }
     ]
 }
-console.log(1);
+console.log(2);
 
 vegaEmbed('#map',vgData);
     
