@@ -1,5 +1,6 @@
-var containerWidth = document.getElementById("map").style.width;
-var containerHeight = document.getElementById("map").style.height;
+var styles = window.getComputedStyle(document.getElementById('map'))
+var containerWidth = parseFloat(styles.width);
+var containerHeight = parseFloat(styles.height);
 
 const vgData = {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.1.0.json",
@@ -50,6 +51,7 @@ const vgData = {
         }
     ]
 }
+console.log(1);
 
 vegaEmbed('#map',vgData);
     
