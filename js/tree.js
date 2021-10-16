@@ -1,4 +1,4 @@
-var styles = window.getComputedStyle(document.getElementById('map'))
+var styles = window.getComputedStyle(document.getElementById('tree'))
 var containerWidth = parseFloat(styles.width);
 var containerHeight = parseFloat(styles.height);
 
@@ -130,4 +130,5 @@ const treeData = {
   }
 
 vegaEmbed('#tree',treeData);
+console.log("Tree embeded")
     

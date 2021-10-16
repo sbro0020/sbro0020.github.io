@@ -51,7 +51,7 @@ const mapData = {
         }
     ]
 }
-console.log(2);
 
 vegaEmbed('#map',mapData);
+console.log("Map embeded");
     
