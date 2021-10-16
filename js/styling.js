@@ -36,15 +36,10 @@ for (let sectionIndex=1; sectionIndex<sections.length; sectionIndex++) {
     var graph = section.getElementsByClassName('graph')[0];
     var info = section.getElementsByClassName('info')[0];
     var styles = window.getComputedStyle(graph);
-    console.log(graph.getElementsByTagName('div'));
-    var graphAct = graph.getElementsByTagName('div')[0].getElementsByTagName('canvas')[0];
-    console.log(1);
     
     let newHeight = parseFloat(styles.width)/2;
     section.style.marginTop = height+5;
     graph.style.height = newHeight;
     info.style.height = newHeight;
-    graphAct.style.width = parseFloat(styles.width);
-    graphAct.style.height = newHegiht;
     if (sectionIndex===1) { height += newHeight; }
 }
