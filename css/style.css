@@ -98,3 +98,7 @@ body {
     background-color: pink;
     width: 28%;
 }
+
+.vega-embed {
+    position: absolute;
+}
