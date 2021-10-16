@@ -70,7 +70,7 @@ const densityData = {
                 "align": "left",
                 "dx": 5,
                 "dy": -(containerWidth*568/630)/8,
-                "fontSize": 12,
+                "fontSize": fontsizeInformation,
                 "fontWeight": 300
             },
             "encoding": { 

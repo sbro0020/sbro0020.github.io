@@ -8,7 +8,7 @@ const brushData = {
     "vconcat": [
       {
         "width": containerWidth*568/630,
-        "height": containerHeight*(288284/377000)*0.8,
+        "height": containerHeight*(288284/377000)*0.7,
         "mark": "area",
         "encoding": {
           "x": {
