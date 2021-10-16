@@ -38,6 +38,7 @@ for (let sectionIndex=1; sectionIndex<sections.length; sectionIndex++) {
     var graphActual = section.getElementsByTagName('canvas')[0];
     var styles = window.getComputedStyle(graph);
 
+    console.log(graphActual);
     console.log("Section loaded");
     
     let newHeight = parseFloat(styles.width)/2;
