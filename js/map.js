@@ -2,13 +2,13 @@ var styles = window.getComputedStyle(document.getElementById('map'))
 var containerWidth = parseFloat(styles.width);
 var containerHeight = parseFloat(styles.height);
 
-console.log(containerHeight);
-console.log(containerWidth);
+console.log(containerHeight); //288.283
+console.log(containerWidth);  //568
 
 const mapData = {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.1.0.json",
-    "width": containerWidth*0.85,
-    "height": containerHeight*0.85,
+    "width": containerWidth,
+    "height": containerHeight,
     "data": {
         "url": "data/worldMap.topojson",
         "format": {
