@@ -39,7 +39,7 @@ for (let sectionIndex=1; sectionIndex<sections.length; sectionIndex++) {
     var styles = window.getComputedStyle(graph);
 
     console.log(graphActual);
-    console.log("Section loaded");
+    console.log("Section loaded 2");
     
     let newHeight = parseFloat(styles.width)/2;
     section.style.marginTop = height+5;
