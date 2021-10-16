@@ -7,7 +7,7 @@ console.log(containerWidth);  //568
 
 const mapData = {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.1.0.json",
-    "width": containerWidth*142/159,
+    "width": containerWidth*530/636,
     "height": containerHeight*288283/298000,
     "data": {
         "url": "data/worldMap.topojson",
