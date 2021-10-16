@@ -1,5 +1,3 @@
-const { default: vegaEmbedModule } = require("vega-embed");
-
 var containerWidth = document.getElementById("map").clientWidth;
 var containerHeight = document.getElementById("map").clientHeight;
 
