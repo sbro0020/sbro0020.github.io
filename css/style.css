@@ -24,6 +24,7 @@ body {
     display: inline-block;
     width: 100%;
     position: relative;
+    margin-top: 5%;
 }
 .graph {
     width: 72%;
@@ -31,6 +32,7 @@ body {
     display: table-cell;
 }
 .info {
+    width: 28%;
     position: absolute;
     display: table-cell;
 }
@@ -41,24 +43,16 @@ body {
 
 #map-info {
     margin-left: 72%;
-    width: 28%;
 }
 
 #tree {
     margin-left: 28%;
 }
-#tree-info {
-    width: 28%;
-}
 
 #brush-info {
     margin-left: 72%;
-    width: 28%;
 }
 
 #density {
     margin-left: 28%;
-}
-#density-info {
-    width: 28%;
 }
