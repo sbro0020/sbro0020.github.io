@@ -11,12 +11,12 @@ body {
 #header {
     text-align: center;
     vertical-align: middle;
-    height: 140px;
+    height: auto;
 }
 #header h1 {
     margin-bottom: 5px;
 }
-#header h4 {
+#header h2 {
     margin-top: 5px;
 }
 
@@ -29,10 +29,9 @@ body {
     position: absolute;
     display: table-cell;
 }
-.info h6 {
+.info h3 {
     text-align: center;
-    font-size: 18pt;
-    margin-top: 5%;
+    margin: 5% 2% auto 2%;
 }
 
 #map-section {
@@ -46,12 +45,10 @@ body {
     margin-left: 72%;
     width: 28%;
     height: 400;
-    background-color: lightcoral;
     
 }
 
 #tree-section {
-    padding-top: 10px;
     display: inline-block;
     width: 100%;
     position: relative;

@@ -9,30 +9,39 @@
         <script src="https://cdn.jsdelivr.net/npm/vega@5/build/vega-core.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
         <link rel='stylesheet' href='css/style.css'>
+        
     </head>
     <body>
         <section id='header'>
-            <h1>FIT3170 Assignment 2</h1>
-            <h4>Sean Brooker - 29568071</h4>
-            <p>Mathematics has deep history tracing back to thousands of years, but almost as interesting
+            <h1 id='header-title'>FIT3170 Assignment 2</h1>
+            <h2 id='header-subtitle'>Sean Brooker - 29568071</h2>
+            <p id='header-info'>
+                Mathematics has deep history tracing back to thousands of years, but almost as interesting
                 as the studies themselves and those who dedicated their to its furtherence
             </p>
         </section>
         <section id='map-section'>
             <div id="map" class='graph' style='position: absolute;'></div>
             <div id="map-info" class='info'>
-                <h6>Where do they live?</h6>
+                <h3 id='map-info-head'>Where do they live?</h3>
                 <ul>
                     <li>Point 1</li>
                     <li>Point 2</li>
                 </ul>
             </div>
             <script>
-                var map = document.getElementById("map");
+                var graph = document.getElementById("map");
                 var info = document.getElementById("map-info");
-                var mapStyles = window.getComputedStyle(map);
-                map.style.height = parseFloat(mapStyles.width)/2; 
-                info.style.height = parseFloat(mapStyles.width)/2;
+                var title = document.getElementById('map-info-head');
+                var section = document.getElementById('map-section');
+                var aboveSection = window.getComputedStyle(document.getElementById('header'));
+                var graphStyles = window.getComputedStyle(graph);
+
+                //section.style.marginTop = parseFloat(aboveSection.height)+5;
+
+                graph.style.height = parseFloat(graphStyles.width)/2; 
+                info.style.height = parseFloat(graphStyles.width)/2;
+
             </script>
         </section>
         <section id='tree-section'>
@@ -85,5 +94,6 @@
             //vegaEmbed('#tree', 'tree.vg.json').catch(console.error);
             //vegaEmbed("#brush", 'density-brush.json').catch(console.error); 
         </script>
+        <script src='js/styling.js' type='text/javascript'></script>
     </body>
 </html>
