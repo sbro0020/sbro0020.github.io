@@ -65,7 +65,7 @@ const densityData = {
                 "type": "text",
                 "align": "left",
                 "dx": 5,
-                "dy": -(containerWidth*568/630)/4,
+                "dy": -(containerWidth*568/630)/8,
                 "fontSize": 12,
                 "fontWeight": 300
             },
