@@ -4,8 +4,8 @@ var containerHeight = parseFloat(styles.height);
 
 const vgData = {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.1.0.json",
-    "width": containerWidth*0.83,
-    "height": containerHeight*0.83,
+    "width": containerWidth*0.85,
+    "height": containerHeight*0.85,
     "data": {
         "url": "data/worldMap.topojson",
         "format": {
