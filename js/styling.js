@@ -37,7 +37,7 @@ for (let sectionIndex=1; sectionIndex<sections.length; sectionIndex++) {
     var info = section.getElementsByClassName('info')[0];
     var styles = window.getComputedStyle(graph);
     console.log(graph);
-    console.log(graph.getElementsByClassName('div'));
+    console.log(graph.children[0]);
     var graphAct = graph.getElementsByClassName('div')[0].getElementsByClassName('canvas')[0];
     console.log(1);
     
