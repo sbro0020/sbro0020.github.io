@@ -53,6 +53,7 @@ body {
 
 #brush {
     margin-left: 28%;
+    flex-shrink: 2;
 }
 #brush-info {
     width: 28%;
