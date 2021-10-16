@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.1.0.json",
-    "data": { "url": "data/brush.csv" },
+    "data": { "url": "https://sbro0020.github.io/data/brush.csv" },
     "vconcat": [{
         "width": "container",
         "height": 240,
@@ -8,11 +8,15 @@
         "encoding": {
             "x": {
                 "field": "year",
-                "type": "temporal",
+                "type": "quantitative",
                 "scale": { "domain": { "param": "brush" } },
                 "axis": { "title": "", "tickCount": 10 }
             },
-            "y": { "field": "num", "type": "quantitative" }
+            "y": { 
+                "field": "num", 
+                "type": "quantitative",
+                "scale": { "domain": [0, 3000], "nice": false}
+            }
         }
     }, {
         "width": "container",
@@ -25,13 +29,15 @@
         "encoding": {
             "x": {
                 "field": "year",
-                "type": "temporal",
+                "title": "Year (CE)",
+                "type": "quantitative",
                 "axis": { "tickCount": 10 }
             },
             "y": {
                 "field": "num",
                 "type": "quantitative",
-                "axis": { "tickCount": 3, "grid": false }
+                "axis": { "tickCount": 3, "grid": false },
+                "scale": { "domain": [0,3000] }
             }
         }
     }]
