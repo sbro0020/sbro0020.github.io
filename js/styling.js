@@ -1,6 +1,9 @@
 /* styling.js
 Used for scaling sizing based on the window size on load */
 
+await vegaEmbed("#map", "map.vg.json").catch(console.error);
+await vegaEmbed('#tree', 'tree.vg.json').catch(console.error);
+
 // Get header data
 var styles = window.getComputedStyle(document.getElementById('header'));
 var otherStyles = window.getComputedStyle(document.getElementById('map'));
