@@ -4,11 +4,9 @@ var containerHeight = parseFloat(styles.height);
 
 const treeData = {
     "$schema": "https://vega.github.io/schema/vega/v5.20.2.json",
-    "description": "An example of treemap layout for hierarchical data.",
-    "width": containerWidth*0.85,
-    "height": containerHeight*0.85,
+    "width": (containerWidth-9)*568/636,
+    "height": containerHeight*288283/298000,
     "autosize": "none",
-  
     "data": [
       {
         "name": "tree",
@@ -111,11 +109,11 @@ const treeData = {
         "interactive": false,
         "encode": {
           "enter": {
-            "font": { "value": "Roboto, Arial" },
             "align": { "value": "center" },
             "baseline": { "value": "middle" },
             "fill": { "value": "#000" },
             "text": { "field": "name" },
+			"font": { "value": "Lucida Sans Unicode" },
             "fontWeight": { "value": "bold" },
             "lineBreak": { "value": " " },
             "fontSize": { "value": fontsizeInformation }
