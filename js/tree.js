@@ -2,7 +2,7 @@ var styles = window.getComputedStyle(document.getElementById('map'))
 var containerWidth = parseFloat(styles.width);
 var containerHeight = parseFloat(styles.height);
 
-var vgData = {
+const treeData = {
     "$schema": "https://vega.github.io/schema/vega/v5.20.2.json",
     "description": "An example of treemap layout for hierarchical data.",
     "width": containerWidth*0.85,
@@ -128,7 +128,6 @@ var vgData = {
       }
     ]
   }
-console.log(2);
 
-vegaEmbed('#map',vgData);
+vegaEmbed('#tree',treeData);
     
