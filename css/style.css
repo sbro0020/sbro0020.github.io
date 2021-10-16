@@ -51,16 +51,14 @@ body {
     width: 28%;
 }
 
-#brush {
-    margin-left: 28%;
-    flex-shrink: 2;
-}
 #brush-info {
+    margin-left: 72%;
     width: 28%;
 }
 
+#density {
+    margin-left: 28%;
+}
 #density-info {
-    margin-left: 72%;
     width: 28%;
-    
 }
