@@ -20,6 +20,11 @@ body {
     margin-top: 5px;
 }
 
+.section {
+    display: inline-block;
+    width: 100%;
+    position: relative;
+}
 .graph {
     width: 72%;
     position: absolute;
@@ -34,62 +39,27 @@ body {
     margin: 5% 2% auto 2%;
 }
 
-#map-section {
-    padding-top: 10px;
-    display: inline-block;
-    width: 100%;
-    position: relative;
-}
-#map {}
 #map-info {
     margin-left: 72%;
     width: 28%;
-    height: 400;
-    
 }
 
-#tree-section {
-    display: inline-block;
-    width: 100%;
-    position: relative;
-}
 #tree {
-    background-color: blue;
     margin-left: 28%;
 }
 #tree-info {
-    background-color: lightskyblue;
     width: 28%;
 }
 
-#density-section {
-    padding-top: 10px;
-    display: inline-block;
-    width: 100%;
-    position: relative;
-}
-#density {
-    background-color: green;
-}
-#density-info {
-    margin-left: 72%;
-    width: 28%;
-    height: 400;
-    background-color: lightgreen;
-    
-}
-
-#brush-section {
-    padding-top: 10px;
-    display: inline-block;
-    width: 100%;
-    position: relative;
-}
 #brush {
-    background-color: purple;
     margin-left: 28%;
 }
 #brush-info {
-    background-color: pink;
     width: 28%;
+}
+
+#density-info {
+    margin-left: 72%;
+    width: 28%;
+    
 }

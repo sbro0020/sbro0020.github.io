@@ -2,27 +2,44 @@
 Used for scaling sizing based on the window size on load */
 
 // Get header data
-var pageTitle = document.getElementById('header-title');
-var pageSubtitle = document.getElementById('header-subtitle');
-var info = document.getElementById('header-info');
 var styles = window.getComputedStyle(document.getElementById('header'));
+var otherStyles = window.getComputedStyle(document.getElementById('map'));
 
+// Set font sizes as constants
 const fontsizeHeader = parseFloat(styles.width)/25;
 const fontsizeHeader2 = parseFloat(styles.width)/40;
-const fontsizeInformation = parseFloat(styles.width)/60;
+const fontsizeHeader3 = parseFloat(otherStyles.width)/35;
+const fontsizeInformation = parseFloat(otherStyles.width)/60;
 
+// Get collections of all elements that have text in them
 let headers = document.getElementsByTagName('h1');
-for (let i=0; i<headers.length; i++) { headers[i].style.fontSize = fontsizeHeader; }
-
 let subheaders = document.getElementsByTagName('h2');
-for (let i=0; i<subheaders.length; i++) { subheaders[i].style.fontSize = fontsizeHeader2; }
-
-let information = document.getElementsByTagName('p');
-for (let i=0; i<information.length; i++) { information[i].style.fontSize = fontsizeInformation; }
-information = document.getElementsByTagName('li');
-for (let i=0; i<information.length; i++) { information[i].style.fontSize = fontsizeInformation; }
-
-styles = window.getComputedStyle(document.getElementById('map'));
-const fontsizeHeader3 = parseFloat(styles.width)/30;
 let subsubhead = document.getElementsByTagName('h3');
+let information = document.getElementsByTagName('p');
+let listInformation = document.getElementsByTagName('li');
+
+// Go through all elements found above and apply font sizes as above
+for (let i=0; i<headers.length; i++) { headers[i].style.fontSize = fontsizeHeader; }
+for (let i=0; i<subheaders.length; i++) { subheaders[i].style.fontSize = fontsizeHeader2; }
 for (let i=0; i<subsubhead.length; i++) { subsubhead[i].style.fontSize = fontsizeHeader3; }
+for (let i=0; i<information.length; i++) { information[i].style.fontSize = fontsizeInformation; }
+for (let i=0; i<listInformation.length; i++) { listInformation[i].style.fontSize = fontsizeInformation; }
+
+
+// Set heights based on width
+// Get sections
+var sections = document.getElementsByTagName('section');
+var height = 0;
+for (let sectionIndex=1; sectionIndex<sections.length; sectionIndex++) {
+    // Loop through all the sections EXCEPT the first (the header section)
+    var section = sections[sectionIndex];
+    var graph = section.getElementsByClassName('graph')[0];
+    var info = section.getElementsByClassName('info')[0];
+    var styles = window.getComputedStyle(graph);
+    
+    let newHeight = parseFloat(styles.width)/2;
+    section.style.marginTop = height+5;
+    graph.style.height = newHeight;
+    info.style.height = newHeight;
+    if (sectionIndex===1) { height += newHeight; }
+}
