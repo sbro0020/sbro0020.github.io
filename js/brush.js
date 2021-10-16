@@ -7,8 +7,8 @@ const brushData = {
     "data": {"url": "https://raw.githubusercontent.com/sbro0020/sbro0020.github.io/main/data/brush.csv"},
     "vconcat": [
       {
-        "width": containerWidth*0.85,
-        "height": containerHeight*0.85*0.8,
+        "width": containerWidth,
+        "height": containerHeight*0.8,
         "mark": "area",
         "encoding": {
           "x": {
@@ -27,8 +27,8 @@ const brushData = {
         }
       },
       {
-        "width": containerWidth*0.85,
-        "height": containerHeight*0.85*0.2,
+        "width": containerWidth,
+        "height": containerHeight*0.2,
         "mark": "area",
         "params": [
           {"name": "brush", "select": {"type": "interval", "encodings": ["x"]}}
