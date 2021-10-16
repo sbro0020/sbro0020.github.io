@@ -6,8 +6,8 @@ const brushData = {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.1.0.json",
     "data": { "url": "https://sbro0020.github.io/data/brush.csv" },
     "vconcat": [{
-        "width": containerWidth,
-        "height": containerHeight*0.8,
+        "width": containerWidth*0.85,
+        "height": containerHeight*0.85*0.8,
         "mark": "area",
         "encoding": {
             "x": {
@@ -23,8 +23,8 @@ const brushData = {
             }
         }
     }, {
-        "width": containerWidth,
-        "height": containerHeight*0.2,
+        "width": containerWidth*0.85,
+        "height": containerHeight*0.85*0.2,
         "mark": "area",
         "params": [{
             "name": "brush",
