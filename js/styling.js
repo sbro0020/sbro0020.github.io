@@ -37,10 +37,18 @@ for (let sectionIndex=1; sectionIndex<sections.length; sectionIndex++) {
     var info = section.getElementsByClassName('info')[0];
     var graphActual = section.getElementsByTagName('canvas')[0];
     var styles = window.getComputedStyle(graph);
+
+    console.log("Section loaded");
     
     let newHeight = parseFloat(styles.width)/2;
     section.style.marginTop = height+5;
     graph.style.height = newHeight;
     info.style.height = newHeight;
+
+    graphActual.style.height = newHeight;
+    graphActual.style.width = parseFloat(styles.width);
+
+    console.log("Styles applied")
+
     if (sectionIndex===1) { height += newHeight; }
 }
