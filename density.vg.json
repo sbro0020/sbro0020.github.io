@@ -1,48 +1,47 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Density Plot of Age",
+    "title": {
+        "text": "Density Plot of the Life Span of Famous Mathematicians",
+        "font": "Lucida Sans Unicode"
+    },
     "width": 800,
     "height": 400,
-    "data": { "url": "densitydata.json" },
+    "data": { "url": "data/density.json" },
     "transform": [
         { "density": "age", "bandwidth": 1 }
     ],
-    
     "layer": [
         {
-            "params": [{
-                "name": "index",
-                "value": [{"x": 60}],
-                "select": {
-                    "type": "point",
-                    "encodings": ["x"],
-                    "on": "mouseover",
-                    "nearest": true
-                }
-            }],
-            "mark": "point",
-            "encoding": {
-                "x": {"field": "date", "type": "temporal", "axis": null},
-                "opacity": {"value": 0}
-            }
-        },{
             "mark": "area",
             "encoding": {
                 "x": {
                     "field": "value",
-                    "title": "Age",
+                    "title": "Age at Death",
                     "type": "quantitative",
-                    "scale": { "domain": [0, 120] }
+                    "scale": { "domain": [0, 120] },
+                    "axis": {
+                        "titleFont": "Lucida Sans Unicode",
+                        "titleFontWeight": 600,
+                        "labelFont": "Lucida Sans Unicode",
+                        "labelFontWeight": 200
+                    }
                 },
                 "y": {
                     "field": "density",
+                    "title": "Density of Mathematicians",
                     "type": "quantitative",
-                    "scale": {"domain": [0,0.06]}
+                    "scale": { "domain": [0,0.06] },
+                    "axis": {
+                        "titleFont": "Lucida Sans Unicode",
+                        "titleFontWeight": 600,
+                        "labelFont": "Lucida Sans Unicode",
+                        "labelFontWeight": 200
+                    }
                 },
                 "color": { "value": "#377eb8" },
                 "tooltip": [
-                    { "field": "age", "type": "quantitative", "title": "Age" },
-                    { "field": "value", "type": "quantitative", "title": "Density" }
+                    { "field": "value", "type": "quantitative", "title": "Age" },
+                    { "field": "density", "type": "quantitative", "title": "Density" }
                 ]
             }
         },{
@@ -51,11 +50,11 @@
                 "x": {
                     "aggregate": "mean",
                     "field": "value",
-                    "type": "quantitative"
+                    "type": "quantitative",
+                    "scale": { "domain": [0, 120] }
                 },
                 "color": { "value": "#e41a1c" },
                 "size": { "value": 3 },
-                "text": { "value": "Average Life Span" },
                 "tooltip": [
                     { "aggregate": "mean", "field": "value", "type": "quantitative", "title": "Average Life Span" }
                 ]
@@ -73,34 +72,20 @@
                 "x": { 
                     "aggregate": "mean",
                     "field": "value",
-                    "type": "quantitative"
+                    "type": "quantitative",
+                    "scale": { "domain": [0,120] }
                 },
-                "text": { "value": "Average" },
+                "text": { 
+                    "value": "Average",
+                    "format": {
+                        "font": "Lucida Sans Console",
+                        "text": "Average"
+                    }
+                },
                 "tooltip": [
                     { "aggregate": "mean", "field": "value", "type": "quantitative", "title": "Average Life Span" }
                 ]
             }
-        },{
-            "transform": [{ "filter": { "param": "index" }}],
-            "encoding": {
-                "x": { "field": "age", "type": "quantitative" },
-                "color": { "value": "#4daf4a" }
-            },
-            "layer": [
-                { "mark": { "type": "rule", "strokeWidth": 0.5 }},
-                { 
-                    "mark": {
-                        "type": "text",
-                        "align": "center",
-                        "fontWeight": 100
-                    },
-                    "encoding": {
-                        "text": { "field": "age" },
-                        "y": { "value": 130 }
-                    }
-                }
-            ]
         }
     ]
-  }
-    
+}

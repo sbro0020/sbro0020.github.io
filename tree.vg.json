@@ -6,87 +6,12 @@
   "padding": 2.5,
   "autosize": "none",
 
-  "signals": [
-    {
-      "name": "Show_Science",
-      "description": "Group filter",
-      "value": true,
-      "bind": { "input": "checkbox" }
-    },{
-      "name": "Show_Social_Science",
-      "description": "Group filter",
-      "value": true,
-      "bind": { "input": "checkbox" }
-    },{
-      "name": "Show_Politics",
-      "description": "Group filter",
-      "value": true,
-      "bind": { "input": "checkbox" }
-    },{
-      "name": "Show_Arts",
-      "description": "Group filter",
-      "value": true,
-      "bind": { "input": "checkbox" }
-    },{
-      "name": "Show_Religion",
-      "description": "Group filter",
-      "value": true,
-      "bind": { "input": "checkbox" }
-    },{
-      "name": "Show_Education",
-      "description": "Group filter",
-      "value": true,
-      "bind": { "input": "checkbox" }
-    },{
-      "name": "Show_Law",
-      "description": "Group filter",
-      "value": true,
-      "bind": { "input": "checkbox" }
-    },{
-      "name": "Show_Business",
-      "description": "Group filter",
-      "value": true,
-      "bind": { "input": "checkbox" }
-    },{
-      "name": "Show_Finance",
-      "description": "Group filter",
-      "value": true,
-      "bind": { "input": "checkbox" }
-    }
-  ],
   "data": [
     {
       "name": "tree",
-      "url": "data.json",
+      "url": "data/tree.json",
       "transform": [
         {
-          "type": "filter",
-          "expr": "!Show_Science ? datum.id<1000||datum.id>=2000 : datum.id!=6"
-        },{
-          "type": "filter",
-          "expr": "!Show_Social_Science ? datum.id<2000||datum.id>=3000 : datum.id!=6"
-        },{
-          "type": "filter",
-          "expr": "!Show_Politics ? datum.id<3000||datum.id>=4000 : datum.id!=6"
-        },{
-          "type": "filter",
-          "expr": "!Show_Arts ? datum.id<4000||datum.id>=5000 : datum.id!=6"
-        },{
-          "type": "filter",
-          "expr": "!Show_Religion ? datum.id<5000||datum.id>=6000 : datum.id!=6"
-        },{
-          "type": "filter",
-          "expr": "!Show_Education ? datum.id<6000||datum.id>=7000 : datum.id!=6"
-        },{
-          "type": "filter",
-          "expr": "!Show_Law ? datum.id<7000||datum.id>=8000 : datum.id!=6"
-        },{
-          "type": "filter",
-          "expr": "!Show_Business ? datum.id<8000||datum.id>=9000 : datum.id!=6"
-        },{
-          "type": "filter",
-          "expr": "!Show_Finance ? datum.id>9000||datum.id>=10000 : datum.id!=6"
-        },{
           "type": "stratify",
           "key": "id",
           "parentKey": "parent"
@@ -115,10 +40,15 @@
       "type": "ordinal",
       "domain": { "data": "nodes", "field": "name" },
       "range": [
-        "#9edae5", "#1f77b4", "#17becf", "#aec7e8", "#dbdb8d",
-        "#ff7f0e", "#bcbd22", "#ffbb78", "#c7c7c7", "#2ca02c",
-        "#7f7f7f", "#98df8a", "#f7b6d2", "#d62728", "#e377c2",
-        "#ff9896", "#c49c94", "#9467bd", "#8c564b", "#c5b0d5"
+        "#e41a1c", "#e73133", "#e94849", "#ec5f61", "#ef7677", "#f4a3a4", "#fad1d2", "#fce9e9",
+        "#377eb8", "#5f98c6", "#73a5cd", "#afcbe3", "#d7e5f1",
+        "#4daf4a", "#a6d7a5", 
+        "#984ea3", "#b27aba", "#cca7d1", "#e6d3e8", 
+        "#ff7f00",
+        "#ffc233",
+        "#f781bf",
+        "#a65628",
+        "#999999"
       ]
     },{
       "name": "size",

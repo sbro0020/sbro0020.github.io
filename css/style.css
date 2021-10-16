@@ -1,0 +1,100 @@
+html {
+    font-family: 'Lucida Sans Unicode';
+    display: block;
+    width: 100%;
+}
+body {
+    width: 70%;
+    margin: 0 auto;
+}
+
+#header {
+    text-align: center;
+    vertical-align: middle;
+    height: 140px;
+}
+#header h1 {
+    margin-bottom: 5px;
+}
+#header h4 {
+    margin-top: 5px;
+}
+
+.graph {
+    width: 72%;
+    position: absolute;
+    display: table-cell;
+}
+.info {
+    position: absolute;
+    display: table-cell;
+}
+.info h6 {
+    text-align: center;
+    font-size: 18pt;
+    margin-top: 5%;
+}
+
+#map-section {
+    padding-top: 10px;
+    display: inline-block;
+    width: 100%;
+    position: relative;
+}
+#map {
+    background-color: red;
+}
+#map-info {
+    margin-left: 72%;
+    width: 28%;
+    height: 400;
+    background-color: lightcoral;
+    
+}
+
+#tree-section {
+    padding-top: 10px;
+    display: inline-block;
+    width: 100%;
+    position: relative;
+}
+#tree {
+    background-color: blue;
+    margin-left: 28%;
+}
+#tree-info {
+    background-color: lightskyblue;
+    width: 28%;
+}
+
+#density-section {
+    padding-top: 10px;
+    display: inline-block;
+    width: 100%;
+    position: relative;
+}
+#density {
+    background-color: green;
+}
+#density-info {
+    margin-left: 72%;
+    width: 28%;
+    height: 400;
+    background-color: lightgreen;
+    
+}
+
+#brush-section {
+    padding-top: 10px;
+    display: inline-block;
+    width: 100%;
+    position: relative;
+}
+#brush {
+    background-color: purple;
+    margin-left: 28%;
+}
+#brush-info {
+    background-color: pink;
+    width: 28%;
+}

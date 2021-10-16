@@ -1,30 +1,89 @@
 <html>
     <head>
-        <title>Sean Brooker FIT3179 Stuff</title>
+        <title>FIT3179 Data Vis Assignment 2 - Sean Brooker</title>
         <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
         <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
-        <style>
-            #map {
-                top: 100px;
-                bottom: 100px;
-                left: 100px;
-                right: 100px;
-            }
-        </style>
+        <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+        <script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega@5/build/vega-core.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+        <link rel='stylesheet' href='css/style.css'>
     </head>
     <body>
-        <h1>Sean Brooker FIT3179 Stuff</h1>
-        <ul>
-            <li><a href="week9.html">Week 9 Homework</a></li>
-            <li><a href="week10.html">Week 10 Homework</a></li>
-        </ul>
-        <div id="map"></div>
-        <script type="text/javascript">
-            var map = "density.vg.json";
-            vegaEmbed("#map", map).then(result => {
-                // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-            }).catch(console.error);
+        <section id='header'>
+            <h1>FIT3170 Assignment 2</h1>
+            <h4>Sean Brooker - 29568071</h4>
+            <p>Mathematics has deep history tracing back to thousands of years, but almost as interesting
+                as the studies themselves and those who dedicated their to its furtherence
+            </p>
+        </section>
+        <section id='map-section'>
+            <div id="map" class='graph'></div>
+            <div id="map-info" class='info'>
+                <h6>Where do they live?</h6>
+                <ul>
+                    <li>Point 1</li>
+                    <li>Point 2</li>
+                </ul>
+            </div>
+            <script>
+                var map = document.getElementById("map");
+                var info = document.getElementById("map-info");
+                var mapStyles = window.getComputedStyle(map);
+                map.style.height = parseFloat(mapStyles.width)/2; 
+                info.style.height = parseFloat(mapStyles.width)/2;
+            </script>
+        </section>
+        <section id='tree-section'>
+            <div id="tree" class='graph'></div>
+            <div id="tree-info"></div>
+            <script>
+                var tree = document.getElementById('tree');
+                var info = document.getElementById('tree-info');
+                var section = document.getElementById('tree-section');
+                var mapStyles = window.getComputedStyle(document.getElementById('map'));
+                var treeStyles = window.getComputedStyle(tree);
+
+                section.style.marginTop = parseFloat(mapStyles.height)+5;
+                tree.style.height = parseFloat(treeStyles.width)*(9/16);
+                info.style.height = parseFloat(treeStyles.width)*(9/16);
+            </script>
+        </section>
+        <section id='density-section'>
+            <div id='density' class='graph'></div>
+            <div id='density-info'></div>
+            <script>
+                var graph = document.getElementById('density');
+                var info = document.getElementById('density-info');
+                var section = document.getElementById('density-section');
+                var aboveStyles = window.getComputedStyle(document.getElementById('map'));
+                var graphStyles = window.getComputedStyle(tree);
+
+                graph.style.height = parseFloat(graphStyles.width)/2;
+                info.style.height = parseFloat(graphStyles.width)/2;
+            </script>
+        </section>
+        <section id='brush-section'>
+            <div id='brush' class='graph'></div>
+            <div id='brush-info'></div>
+            <script>
+                var graph = document.getElementById('brush');
+                var info = document.getElementById('brush-info');
+                var section = document.getElementById('brush-section');
+                var aboveStyles = window.getComputedStyle(document.getElementById('map'));
+                var graphStyles = window.getComputedStyle(tree);
+
+                graph.style.height = parseFloat(graphStyles.width)/2;
+                info.style.height = parseFloat(graphStyles.width)/2;
+            </script>
+        </section>
+
+        <script type='text/javascript'>
+            //vegaEmbed("#density", "density.vg.json").catch(console.error);
+            vegaEmbed("#map", "map.vg.json").catch(console.error);
+            //vegaEmbed('#tree', 'tree.vg.json').catch(console.error);
+            //vegaEmbed("#brush", 'density-brush.json').catch(console.error); 
         </script>
     </body>
 </html>
