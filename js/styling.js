@@ -36,6 +36,8 @@ for (let sectionIndex=1; sectionIndex<sections.length; sectionIndex++) {
     var graph = section.getElementsByClassName('graph')[0];
     var info = section.getElementsByClassName('info')[0];
     var styles = window.getComputedStyle(graph);
+    console.log(graph);
+    console.log(graph.getElementsByClassName('div'));
     var graphAct = graph.getElementsByClassName('div')[0].getElementsByClassName('canvas')[0];
     console.log(1);
     
