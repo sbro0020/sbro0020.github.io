@@ -2,8 +2,6 @@ var styles = window.getComputedStyle(document.getElementById('tree'))
 var containerWidth = parseFloat(styles.width);
 var containerHeight = parseFloat(styles.height);
 
-styles = window.getComputedStyle(document.getElementById(''))
-
 const treeData = {
     "$schema": "https://vega.github.io/schema/vega/v5.20.2.json",
     "description": "An example of treemap layout for hierarchical data.",
