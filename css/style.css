@@ -41,9 +41,7 @@ body {
     width: 100%;
     position: relative;
 }
-#map {
-    background-color: red;
-}
+#map {}
 #map-info {
     margin-left: 72%;
     width: 28%;
